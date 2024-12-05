@@ -1,0 +1,327 @@
+:root {
+    --primary-color: #006B3F;  /* Ethiopian Green */
+    --secondary-color: #FEDD00;  /* Ethiopian Yellow */
+    --accent-color: #EF3340;  /* Ethiopian Red */
+    --text-color: #333;
+    --light-bg: #f9f9f9;
+    --pattern-color: rgba(0, 107, 63, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--light-bg);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.hero {
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--primary-color) 0%, #004528 100%);
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.ethiopian-nav {
+    padding: 1.5rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid var(--secondary-color);
+}
+
+.logo h2 {
+    font-size: 2rem;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.amharic {
+    font-size: 0.8em;
+    color: var(--secondary-color);
+    margin-left: 0.5rem;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-btn {
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.nav-btn:hover {
+    border-color: var(--secondary-color);
+}
+
+.nav-btn.highlight {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.nav-btn.highlight:hover {
+    background-color: #e5c700;
+}
+
+.hero-content {
+    padding: 5% 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.text-content {
+    max-width: 600px;
+}
+
+.text-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.tagline {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.ethiopian-pattern {
+    height: 4px;
+    background: repeating-linear-gradient(
+        90deg,
+        var(--secondary-color),
+        var(--secondary-color) 10px,
+        var(--accent-color) 10px,
+        var(--accent-color) 20px
+    );
+    margin: 2rem 0;
+    width: 100px;
+}
+
+.description {
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.cta-btn {
+    padding: 1rem 2rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.cta-btn.primary {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.cta-btn.primary:hover {
+    background-color: #e5c700;
+}
+
+.cta-btn.secondary {
+    border: 2px solid var(--secondary-color);
+    color: var(--secondary-color);
+}
+
+.cta-btn.secondary:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.features {
+    padding: 5rem 10%;
+    background-color: white;
+}
+
+.features h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--primary-color);
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.feature-card {
+    padding: 2rem;
+    border-radius: 15px;
+    background-color: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.cultural-section {
+    padding: 5rem 10%;
+    background-color: var(--light-bg);
+    text-align: center;
+}
+
+.pattern-divider {
+    height: 8px;
+    background: repeating-linear-gradient(
+        45deg,
+        var(--primary-color),
+        var(--primary-color) 10px,
+        var(--secondary-color) 10px,
+        var(--secondary-color) 20px,
+        var(--accent-color) 20px,
+        var(--accent-color) 30px
+    );
+    margin: 2rem 0;
+}
+
+.cultural-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.cultural-feature {
+    padding: 2rem;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.cultural-feature i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.ethiopian-footer {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 3rem 10% 1rem;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+}
+
+.footer-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.footer-logo-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid var(--secondary-color);
+}
+
+.footer-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--secondary-color);
+}
+
+.footer-bottom {
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    .hero-content {
+        padding: 20% 5%;
+        text-align: center;
+    }
+
+    .text-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .ethiopian-pattern {
+        margin: 2rem auto;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .footer-logo {
+        align-items: center;
+        text-align: center;
+    }
+}

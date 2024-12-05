@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="images/ibex.jpg">
+    <title>Ibex AI Assistant</title>
+    <link rel="stylesheet" href="css/chatbot.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo-container">
+            <img src="images/ibex.jpg" alt="Ibex Logo" class="logo">
+            <h2>Ibex AI</h2>
+        </div>
+        
+        <div class="nav-buttons">
+            <button class="nav-btn active" onclick="startNewChat();" title="New Chat">
+                <i class='bx bx-plus-circle'></i>
+                <span>አዲስ ውይይት</span>
+            </button>
+            
+            <button class="nav-btn" onclick="displayChatHistory();" title="Chat History">
+                <i class='bx bx-history'></i>
+                <span>የውይይት ታሪክ</span>
+            </button>
+
+            <button class="nav-btn" onclick="toggleLanguage();" title="Switch Language">
+                <i class='bx bx-globe'></i>
+                <span>ቋንቋ ቀይር</span>
+            </button>
+
+            <button class="nav-btn" onclick="toggleTheme();" title="Toggle Theme">
+                <i class='bx bx-moon'></i>
+                <span>ጨለማ ሁነታ</span>
+            </button>
+        </div>
+
+        <div class="user-profile">
+            <img src="images/user.jpg" alt="User Avatar" class="avatar">
+            <div class="user-info">
+                <span class="user-name">ውድ ተጠቃሚ</span>
+                <button class="logout-btn" onclick="window.location.href='ibex.html';">
+                    <i class='bx bx-log-out'></i>
+                    <span>ውጣ</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="chat-header">
+            <div class="chat-info">
+                <img src="images/ibex.jpg" alt="Ibex Assistant" class="assistant-avatar">
+                <div class="assistant-info">
+                    <h1>Ibex AI Assistant</h1>
+                    <span class="status">እንኳን ደህና መጡ | Welcome</span>
+                </div>
+            </div>
+            <div class="header-actions">
+                <button class="action-btn" onclick="clearChat();" title="Clear Chat">
+                    <i class='bx bx-trash'></i>
+                </button>
+                <button class="action-btn" onclick="exportChat();" title="Export Chat">
+                    <i class='bx bx-download'></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="chat-messages" id="chat-messages">
+            <div class="message assistant-message">
+                <div class="message-content">
+                    <p>እንኳን ደህና መጡ! Welcome to Ibex AI Assistant. I can help you in both Amharic and English.</p>
+                    <p>እርስዎን ለመርዳት ዝግጁ ነኝ። How can I assist you today?</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="chat-input-container">
+            <div class="input-wrapper">
+                <textarea id="user-input" placeholder="Type in English or አማርኛ..." rows="1"></textarea>
+                <div class="input-actions">
+                    <button class="action-btn" onclick="startVoiceInput();" title="Voice Input">
+                        <i class='bx bx-microphone'></i>
+                    </button>
+                    <button class="action-btn" onclick="attachFile();" title="Attach File">
+                        <i class='bx bx-paperclip'></i>
+                    </button>
+                </div>
+            </div>
+            <button id="send-button" class="send-btn">
+                <i class='bx bx-send'></i>
+            </button>
+        </div>
+    </div>
+
+    <div id="history-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>የውይይት ታሪክ | Chat History</h2>
+                <button class="close-btn" onclick="closeHistory();">
+                    <i class='bx bx-x'></i>
+                </button>
+            </div>
+            <div id="history-container" class="history-list"></div>
+        </div>
+    </div>
+
+    <div id="settings-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>ቅንብሮች | Settings</h2>
+                <button class="close-btn" onclick="closeSettings();">
+                    <i class='bx bx-x'></i>
+                </button>
+            </div>
+            <div class="settings-container">
+                <div class="setting-group">
+                    <h3>ቋንቋ | Language</h3>
+                    <select id="language-select">
+                        <option value="am">አማርኛ</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+                <div class="setting-group">
+                    <h3>ገጽታ | Theme</h3>
+                    <div class="theme-options">
+                        <button class="theme-btn light-theme">Light</button>
+                        <button class="theme-btn dark-theme">Dark</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
